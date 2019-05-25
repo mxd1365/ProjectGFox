@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public ArrayList<Character> characterList;
-    public Character[,] grid;
+    public List<CharacterIF> characterList;
+    public CharacterIF[,] grid;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        characterList = new ArrayList();
-        grid = new Character[3, 3];
+        characterList = new List<CharacterIF>();
+        grid = new CharacterIF[3, 3];
         
     }
 
@@ -23,11 +23,11 @@ public class Unit : MonoBehaviour
         
     }
 
-    bool AddCharacter(Character c, int x, int y)
+    bool AddCharacter(CharacterIF c, int x, int y)
     {
-        for(int i = 0; i < c.length-1; i++)
+        for(int i = 0; i < c.GetLength()-1; i++)
         {
-            for(int j = 0; j < c.width-1; j++)
+            for(int j = 0; j < c.GetWidth()-1; j++)
             {
                 if(grid[x + i, y + j] != null)
                 {
@@ -36,9 +36,9 @@ public class Unit : MonoBehaviour
             }
         }
         
-        for(int i = 0; i < c.length-1; i++)
+        for(int i = 0; i < c.GetLength()-1; i++)
         {
-            for(int j = 0; j < c.width-1; j++)
+            for(int j = 0; j < c.GetWidth()-1; j++)
             {
                 grid[x + i, y + j] = c;
             }
