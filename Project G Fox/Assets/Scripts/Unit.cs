@@ -56,7 +56,7 @@ public class Unit : MonoBehaviour
         var pos = FindCharacterInGrid(c); 
         if(pos.Item1 != -1)
         {
-            if (x + c.GetLength() < gridLength && y + c.GetWidth < gridWidth)
+            if (x + c.GetLength() < gridLength && y + c.GetWidth() < gridWidth)
             {
                 for (int i = 0; i < c.GetWidth(); i++)
                 {
