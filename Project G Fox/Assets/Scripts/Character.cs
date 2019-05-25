@@ -9,6 +9,8 @@ public class Character : MonoBehaviour, CharacterIF
     public int currentHealth = 100;
     public int strength = 10;
     public int defense = 5;
+    public int length;
+    public int width;
 
     // Start is called before the first frame update
     void Start()
@@ -33,4 +35,7 @@ public class Character : MonoBehaviour, CharacterIF
     {
         target.TakeDamage(strength);
     }
+
+    public int GetLength() { return length; }
+    public int GetWidth() { return width; }
 }
